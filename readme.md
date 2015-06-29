@@ -20,7 +20,7 @@ php composer update
 Step 2:
 Add service provider to app/config/app.php
 ```
-'Ads\Statistics\AjaxCrudServiceProvider',
+'Ads\AjaxCrud\AjaxCrudServiceProvider',
 ```
 
 Step 3:
