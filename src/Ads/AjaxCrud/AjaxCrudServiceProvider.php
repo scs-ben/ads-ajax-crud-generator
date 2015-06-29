@@ -1,4 +1,4 @@
-<?php namespace Ads\Statistics;
+<?php namespace Ads\AjaxCrud;
 
 use Statistic;
 use Illuminate\Support\ServiceProvider;
