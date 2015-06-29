@@ -32,6 +32,12 @@ php artisan vendor:publish
 ```
 
 Step 4:
+Add the command to the app/Console/Kernel.php to use in command line:
+```
+'App\Console\Commands\AjaxCrudCommand',
+```
+
+Step 4:
 Set up the location to the AjaxCrud plugin
 
 If you are using Bower, there is no need to modify to config file, simply add this line to your bower.json file:
@@ -52,3 +58,13 @@ Add AjaxCrud.js plugin to your main layout file:
 ```
 <script type="text/javascript" src="{{ asset(Config::get('ajaxCrud.ajax_crud_js_path')) }}"></script>
 ```
+
+Step 6:
+You can now create scaffolding through the php artisan command line:
+
+```
+php artisan make:crud --controllerPrefix=[Vendor] --crudModel=[Contact]
+```
+
+_The controller prefix is the capitalized prefix for the controller that will handle the CRUD request, the model name is the capitalized name of the primary model being edited_
+
