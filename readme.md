@@ -49,7 +49,7 @@ If you are not going to use Bower to, you need to modify the config file to poin
 
 For example:
 ```
-  'ajax_crud_js_path' => '/public/js/ajax_crud/js/AjaxCrud.min.js',
+  'ajax_crud_js_path' => '/js/ajax_crud/js/AjaxCrud.min.js',
 ```
 
 Step 5:
