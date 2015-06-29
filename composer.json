@@ -1,6 +1,5 @@
 {
     "name": "ads/ajax-crud-generator",
-    "version": "1.0.0",
     "description": "Generates basic scaffolding for AjaxCrud JS Plugin to allow for quick and easy AJAX CRUD on forms and modals",
     "keywords": ["laravel", "AJAX CRUD JS Support", "1.0.0"],
 	"license": "LGPLv3",
