@@ -1,0 +1,10 @@
+Route::get('{{url}}/row/{id}', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.row.get', 'uses' => '{{controller}}@get{{crudModel}}Row']);
+Route::put('{{url}}/row/{id}', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.row.put', 'uses' => '{{controller}}@put{{crudModel}}Row']);
+Route::get('{{url}}/new_row', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.new_row.get', 'uses' => '{{controller}}@get{{crudModel}}NewRow']);
+Route::delete('{{url}}/ajax/row/{id}/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.row.delete', 'uses' => '{{controller}}@delete{{crudModel}}Row']);
+Route::post('{{url}}/ajax/rows/{template_id?}', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.rows.post', 'uses' => '{{controller}}@post{{crudModel}}Rows']);
+Route::get('{{url}}/ajax/editable-row/{id}', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.editable_row.get', 'uses' => '{{controller}}@get{{crudModel}}EditRow']);
+Route::put('{{url}}/ajax/modal/{id}/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.modal.put', 'uses' => '{{controller}}@put{{crudModel}}Modal']);
+Route::post('{{url}}/ajax/modal/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.modal.post', 'uses' => '{{controller}}@post{{crudModel}}Modal']);
+Route::get('{{url}}/ajax/new-modal/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.new_modal.get', 'uses' => '{{controller}}@get{{crudModel}}NewModal']);
+Route::get('{{url}}/ajax/editable-modal/{id}/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.editable_modal.get', 'uses' => '{{controller}}@get{{crudModel}}EditModal']);

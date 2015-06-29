@@ -1,0 +1,21 @@
+<tr class="edit-row">
+	<td>
+		<div class="form-group">
+			 <input type="text" class="form-control value-field focus-field" name="name" value="{{ ${{lowerCrudModel}}->name }}" placeholder="{{crudModel}} Name" />
+		</div>
+	</td>
+	<td>
+		<div class="form-group">
+			<select name="status" class="select2 value-field" >
+                @foreach (['Active', 'Inactive'] as $select)
+                    <option value="{{$select}}" {{($select == ${{lowerCrudModel}}->status)?'SELECTED':''}}>{{$select}}</option>
+                @endforeach
+            </select>
+		</div>
+	</td>
+@if (empty($modal) || !$modal)
+	<td style="vertical-align: middle; text-align: center;">
+		<a class="label label-danger ads-del-new-row" href="#" data-original-title="Delete" data-toggle="tooltip"><i class="fa fa-times"></i></a>&nbsp;
+	</td>
+@endif
+</tr>

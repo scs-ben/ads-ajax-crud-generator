@@ -1,0 +1,35 @@
+<form class="form-horizontal" role="form" id="{{lowerCrudModel}}-form">
+	<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="clearfix">
+				<h4 class="pull-left">{{ ucfirst(str_replace('_', ' ', snake_case('{{lowerCrudModel}}'))) }}</h4>
+				<button class="pull-right btn btn-success" id="add-row">Add {{ ucfirst(str_replace('_', ' ', snake_case('{{lowerCrudModel}}'))) }}</button>
+			</div>
+			
+			<table id="{{lowerCrudModel}}" class="table no-border table-hover">
+		        <thead class="no-border">
+			        <tr>
+				        @foreach ($headers = ['Name', 'Status'] as $header)
+				        <th>{{$header}}</th>
+				        @endforeach
+				        <th style="text-align:center;">Actions</th>
+			        </tr>
+		        </thead>
+		        <tbody class="no-border-y">
+		       		@include('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.rows', ['{{lowerCrudModel}}s' => {{lowerCrudModel}}s])
+		        </tbody>
+		        <tfoot class="no-border-y">
+			        <tr style="display: none">
+				        <td colspan="{{ count($header) }}">
+					    	<button class="btn btn-success btn-flat btn-xs ads-add-new-row" href="">New</button>
+					    	<button class="btn btn-default btn-flat btn-xs ads-save-new-rows" id="saverecords">I'm done adding {{ str_replace('_', ' ', snake_case('{{lowerCrudModel}}')) }}s</button>
+				        </td>
+			        </tr>
+		        </tfoot>
+	        </table>
+		</div>
+	</div>
+	
+</form>

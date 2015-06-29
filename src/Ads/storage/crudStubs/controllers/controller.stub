@@ -1,0 +1,108 @@
+public function get{{crudModel}}Row($id)
+{
+    ${{lowerCrudModel}} = {{crudModel}}::find($id);
+
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.rows', 
+        [
+            '{{lowerCrudModel}}s' => [${{lowerCrudModel}}]
+        ]
+    );
+}
+
+public function put{{crudModel}}Row(Request $request, $id)
+{
+    ${{lowerCrudModel}} = {{crudModel}}::find($id);
+    ${{lowerCrudModel}}->fill($request->except('_token'));
+    ${{lowerCrudModel}}->save();
+
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.rows', 
+        [
+            '{{lowerCrudModel}}s' => [${{lowerCrudModel}}]
+        ]
+    );
+}
+
+public function get{{crudModel}}NewRow()
+{
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.new_row');
+
+}
+
+public function delete{{crudModel}}Row($id)
+{
+    {{crudModel}}::destroy($id);
+
+}
+
+public function post{{crudModel}}Rows(Request $request)
+{
+    $newRows = $request->input('newRows');
+    ${{lowerCrudModel}}s = [];
+
+    foreach ($newRows as $newRow) {
+        ${{lowerCrudModel}} = new {{crudModel}};
+        ${{lowerCrudModel}}->fill($newRow);
+        ${{lowerCrudModel}}->save();
+
+        ${{lowerCrudModel}}s[] = ${{lowerCrudModel}};
+    }
+
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.rows', 
+        [
+            '{{lowerCrudModel}}s' => ${{lowerCrudModel}}s
+        ]
+    );
+}
+
+public function get{{crudModel}}EditRow($id)
+{
+    ${{lowerCrudModel}} = {{crudModel}}::find($id);
+    
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.edit_rows', 
+        [
+            '{{lowerCrudModel}}s' => [${{lowerCrudModel}}]
+        ]
+    );
+}
+
+public function put{{crudModel}}Modal(Request $request, $id)
+{
+    ${{lowerCrudModel}} = {{crudModel}}::find($id);
+    ${{lowerCrudModel}}->fill($request->except('_token'));
+    ${{lowerCrudModel}}->save();
+
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.rows', 
+        [
+            '{{lowerCrudModel}}s' => [${{lowerCrudModel}}]
+        ]
+    );
+}
+
+public function get{{crudModel}}NewModal()
+{
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.new_modal');
+}
+
+public function post{{crudModel}}Modal(Request $request)
+{
+    ${{lowerCrudModel}} = new {{crudModel}};
+    ${{lowerCrudModel}}->fill($request->except('_token'));
+    ${{lowerCrudModel}}->save();
+
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.rows', 
+        [
+            '{{lowerCrudModel}}s' => [${{lowerCrudModel}}]
+        ]
+    );
+}
+
+public function get{{crudModel}}EditModal($id)
+{
+    ${{lowerCrudModel}} = {{crudModel}}::find($id);
+
+    return view('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.edit_modal', 
+        [
+            '{{lowerCrudModel}}' => ${{lowerCrudModel}}
+        ]
+    );
+}

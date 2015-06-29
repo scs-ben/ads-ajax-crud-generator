@@ -1,0 +1,53 @@
+<script>
+$('#{{lowerCrudModel}}-form').formValidation({
+    framework: 'bootstrap',
+    icon: {
+        valid: 'fa fa-check',
+        invalid: 'fa fa-exclamation-triangle',
+        validating: 'fa fa-refresh'
+    },
+    fields: {
+    	'name': {
+            validators: {
+                notEmpty: {
+                    message: 'Name is required'
+                }
+            }
+    	},
+    	'status': {
+            validators: {
+                notEmpty: {
+                    message: 'Status is required'
+                }
+            }
+      },
+    }
+});
+	var urls = {
+		urlAjaxRowGet: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.row.get', ['id' => '_id_']) }}",
+		urlAjaxRowPut: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.row.put', ['id' => '_id_']) }}",
+		urlAjaxNewRowGet: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.new_row.get') }}",
+		urlAjaxRowDelete: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.row.delete', ['id' => '_id_']) }}",
+		urlAjaxRowsPost: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.rows.post') }}"
+		urlAjaxEditableRowGet: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.crud.editable_row.get', ['id' => '_id_']) }}",
+		urlAjaxModalPut: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.modal.put', ['id' => '_id_']) }}",
+		urlAjaxModalPost: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.modal.post') }}",
+		urlAjaxNewModalGet: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.new_modal.get') }}",
+		urlAjaxEditableModalGet: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.editable_modal.get', ['id' => '_id_']) }}",
+		urlAjaxSortPut: "",
+	};
+	
+	var hooks = {
+	
+	};
+	
+	var config = [];
+	config.urls = urls;
+	config.form = $('form#{{lowerCrudModel}}-form');
+	config.table = $('table#{{lowerCrudModel}}');
+	config.createInitButton = $('button#add-table-row');
+  	config.datatableArgs = {
+      pageLength: {{ Session::get('datatable.length', '10') }}
+  };
+  var ajaxCrud = new AjaxCrud(config);
+</script>
