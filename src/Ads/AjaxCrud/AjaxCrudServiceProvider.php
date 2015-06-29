@@ -21,6 +21,7 @@ class AjaxCrudServiceProvider extends ServiceProvider {
 		
 		// Publish partial files to storage path
 		$this->publishes([
+				__DIR__.'/../views/partials/modals/' => base_path('resources/views/partials/modals'),
 				__DIR__.'/../storage/crudStubs/' => storage_path('crudStubs'),
 				__DIR__.'/AjaxCrudCommand/' => app_path('Console/Commands'),
 		]);
