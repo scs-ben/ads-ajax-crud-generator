@@ -23,6 +23,10 @@
 		        <tfoot class="no-border-y">
 			        <tr style="display: none">
 				        <td colspan="{{ count($header) }}">
+				        	{{--
+							  for inline edit: use .ads-add-new-row
+							  for modal edit: use .ads-add-new-modal
+							--}}
 					    	<button class="btn btn-success btn-flat btn-xs ads-add-new-row" href="">New</button>
 					    	<button class="btn btn-default btn-flat btn-xs ads-save-new-rows" id="saverecords">I'm done adding {{ str_replace('_', ' ', snake_case('{{lowerCrudModel}}')) }}s</button>
 				        </td>

@@ -8,3 +8,4 @@ Route::put('{{url}}/ajax/modal/{id}/', ['as' => '{{lowerControllerPrefix}}.{{low
 Route::post('{{url}}/ajax/modal/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.modal.post', 'uses' => '{{controller}}@post{{crudModel}}Modal']);
 Route::get('{{url}}/ajax/new-modal/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.new_modal.get', 'uses' => '{{controller}}@get{{crudModel}}NewModal']);
 Route::get('{{url}}/ajax/editable-modal/{id}/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.editable_modal.get', 'uses' => '{{controller}}@get{{crudModel}}EditModal']);
+Route::put('{{url}}/ajax/sort_rows/', ['as' => '{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.sort_rows.put', 'uses' => '{{controller}}@put{{crudModel}}SortRows']);

@@ -34,11 +34,40 @@ $('#{{lowerCrudModel}}-form').formValidation({
 		urlAjaxModalPost: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.modal.post') }}",
 		urlAjaxNewModalGet: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.new_modal.get') }}",
 		urlAjaxEditableModalGet: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.editable_modal.get', ['id' => '_id_']) }}",
-		urlAjaxSortPut: "",
+		urlAjaxSortPut: "{{ route('{{lowerControllerPrefix}}.{{lowerCrudModel}}.ajax.sort_rows.put') }}",
 	};
 	
 	var hooks = {
-	
+		saveRowRequestDone: function(args) {
+    		var $row = args.$row;
+            
+            // Code goes here
+    	},
+    	editRowRequestDone: function(args) {
+    		var $row = args.$row;
+    	},
+		addNewRowRequestDone: function(args) {
+    		var $row = args.$row;
+    	},
+    	saveNewRowsRequestDone: function(args) {
+    		var $table = args.$table;
+    	},
+    	deleteNewRowDone: function(args) {
+    		var $table = args.$table;
+    	},
+    	editModalRequestDone: function(args) {
+    		var $modal = args.$modal;
+    	},
+    	saveModalRequestDone: function(args) {
+    		var $modal = args.$modal;
+    	},
+    	addNewModalRequestDone: function(args) {
+    		var $modal = args.$modal;
+    	},
+    	saveNewModalRequestDone: function(args) {
+    		var $modal = args.$modal;
+    	},
+        
 	};
 	
 	var config = [];

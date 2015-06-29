@@ -3,6 +3,10 @@
 		<td>{{ ${{lowerCrudModel}}->name }}</td>
 		<td>{{ ${{lowerCrudModel}}->status }}</td>
 		<td style="vertical-align:middle;text-align:center">
+			{{--
+			  for inline edit: use .ads-edit-row
+			  for modal edit: use .ads-edit-modal
+			--}}
 			<a class="label label-default ads-edit-row" href="#" data-original-title="Edit" data-toggle="tooltip"><i class="fa fa-pencil"></i></a>
 			<a class="label label-danger ads-prep-del-row md-trigger" data-modal="delete-modal" href="#" data-original-title="Delete" data-toggle="tooltip"><i class="fa fa-times"></i></a>
 		</td>
