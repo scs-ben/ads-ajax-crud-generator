@@ -9,7 +9,7 @@ Step 1:
 
 Set up composer, add the package to your require tag:
 ```
-"ads/ajax-crud-generator": "dev-master"
+"ads/ajax-crud-generator": "1.0.*"
 ```
 
 run
