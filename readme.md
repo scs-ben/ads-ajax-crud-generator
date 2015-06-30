@@ -18,8 +18,8 @@ Also add a publish command so that the files stay up to date:
 		...
 		"post-update-cmd": [
 			...
-			"php artisan vendor:publish --provider='Ads\AjaxCrud\AjaxCrudServiceProvider' --tag=partials --force",
-			"php artisan vendor:publish --provider='Ads\AjaxCrud\AjaxCrudServiceProvider' --tag=commands --force",
+			"php artisan vendor:publish --provider=\"Ads\\AjaxCrud\\AjaxCrudServiceProvider\" --tag=partials --force",
+			"php artisan vendor:publish --provider=\"Ads\\AjaxCrud\\AjaxCrudServiceProvider\" --tag=commands --force",
 			...
 ```
 
