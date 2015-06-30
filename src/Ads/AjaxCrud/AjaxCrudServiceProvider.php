@@ -16,14 +16,24 @@ class AjaxCrudServiceProvider extends ServiceProvider {
 	{
 		// Publish the config file
 		$this->publishes([
-				__DIR__.'/config/ajaxCrud.php' => config_path('ajaxCrud.php'),
+			__DIR__.'/config/ajaxCrud.php' => config_path('ajaxCrud.php'),
+			'config'
 		]);
 		
 		// Publish partial files to storage path
 		$this->publishes([
-				__DIR__.'/views/partials/modals/' => base_path('resources/views/partials/modals'),
-				__DIR__.'/storage/crudStubs/' => storage_path('app/crudStubs'),
-				__DIR__.'/Commands/' => app_path('Console/Commands'),
+			__DIR__.'/views/partials/modals/' => base_path('resources/views/partials/modals'),
+			'assets'
+		]);
+		
+		$this->publishes([
+			__DIR__.'/storage/crudStubs/' => storage_path('app/crudStubs'),
+			'partials'
+		]);
+			
+		$this->publishes([
+			__DIR__.'/Commands/' => app_path('Console/Commands'),
+			'commands'
 		]);
 	}
 	
@@ -37,13 +47,6 @@ class AjaxCrudServiceProvider extends ServiceProvider {
 		$this->mergeConfigFrom(
 		    __DIR__.'/config/ajaxCrud.php', 'ajaxCrud'
 		);
-		
-		// Publish partial files to storage path
-		$this->publishes([
-				__DIR__.'/views/partials/modals/' => base_path('resources/views/partials/modals'),
-				__DIR__.'/storage/crudStubs/' => storage_path('crudStubs'),
-				__DIR__.'/Commands/' => app_path('Console/Commands'),
-		]);
 	}
 
 	/**

@@ -12,6 +12,18 @@ Set up composer, add the package to your require tag:
 "ads/ajax-crud-generator": "1.0.*"
 ```
 
+Also add a publish command so that the files stay up to date:
+```
+"scripts": {
+		...
+		"post-update-cmd": [
+			...
+			"php artisan vendor:publish --provider='Ads\AjaxCrud\AjaxCrudServiceProvider' --tag=partials --force",
+			"php artisan vendor:publish --provider='Ads\AjaxCrud\AjaxCrudServiceProvider' --tag=commands --force",
+			...
+```
+
+
 run
 ```
 php composer update
@@ -56,7 +68,7 @@ Step 5:
 Add AjaxCrud.js plugin to your main layout file:
 
 ```
-<script type="text/javascript" src="{{ asset(Config::get('ajaxCrud.ajax_crud_js_path')) }}"></script>
+<script type="text/javascript" src="{{ asset(config('ajaxCrud.ajax_crud_js_path')) }}"></script>
 ```
 
 Step 6:
