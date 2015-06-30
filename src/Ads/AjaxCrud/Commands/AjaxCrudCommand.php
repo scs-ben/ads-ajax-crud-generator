@@ -52,8 +52,8 @@ class CrudCommand extends Command {
 		
 		$this->info('Attempting to generate ' . $crudModel . ' CRUD');
 		
-		$lowerControllerPrefix = strtolower($controllerPrefix);
-		$lowerCrudModel = strtolower($crudModel);
+		$lowerControllerPrefix = lcfirst($controllerPrefix);
+		$lowerCrudModel = lcfirst($crudModel);
 		
 		$url = '/'.$lowerControllerPrefix . '/crud/' . $lowerCrudModel;
 		
