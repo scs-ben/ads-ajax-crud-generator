@@ -30,20 +30,14 @@ php composer update
 ```
 
 Step 2:
-Add service provider to app/config/app.php
-```
-'Ads\AjaxCrud\AjaxCrudServiceProvider',
-```
-
-Step 3:
 Publish the necessary files
 
 Run:
 ```
-php artisan vendor:publish
+php artisan vendor:publish --provider=\"Ads\\AjaxCrud\\AjaxCrudServiceProvider\"
 ```
 
-Step 4:
+Step 3:
 Add the command to the app/Console/Kernel.php to use in command line:
 ```
 'App\Console\Commands\AjaxCrudCommand',
@@ -65,8 +59,14 @@ For example:
 ```
 
 Step 5:
-Add AjaxCrud.js plugin to your main layout file:
+Add HTML dependencies to your master layout blade file:
 
+```
+@include('partials.modals.delete_modal')
+@include('partials.modals.edit_crud_modal')
+@include('partials.modals.new_crud_modal')
+```
+and
 ```
 <script type="text/javascript" src="{{ asset(config('ajaxCrud.ajax_crud_js_path')) }}"></script>
 ```

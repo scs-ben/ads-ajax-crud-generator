@@ -8,6 +8,6 @@ return array(
 	|--------------------------------------------------------------------------
 	*/
 	
-	'ajax_crud_js_path' => '/bower_components/ajax_crud/js/AjaxCrud.min.js',
+	'ajax_crud_js_path' => '/bower_components/ajax_crud/dist/js/AjaxCrud.min.js',
     
 );
