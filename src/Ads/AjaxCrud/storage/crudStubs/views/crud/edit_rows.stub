@@ -1,6 +1,6 @@
-@foreach($costs as $key => $cost)
-<tr class="edit-row" data-id="{{ $cost->id }}">
-	<td data-order="{{ Carbon::parse($cost->effective_date)->format('m/d/Y') }}">
+@foreach(${{lowerCrudModel}}s as $key => ${{lowerCrudModel}})
+<tr class="edit-row" data-id="{{${{lowerCrudModel}}->id }}">
+	<td>
 		<div class="form-group">
 			 <input type="text" class="form-control value-field focus-field" name="name" value="{{ ${{lowerCrudModel}}->name }}" placeholder="{{crudModel}} Name" />
 		</div>

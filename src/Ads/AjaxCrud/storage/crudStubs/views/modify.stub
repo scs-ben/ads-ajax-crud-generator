@@ -5,24 +5,23 @@
 		<div class="col-md-12">
 			<div class="clearfix">
 				<h4 class="pull-left">{{ ucfirst(str_replace('_', ' ', snake_case('{{lowerCrudModel}}'))) }}</h4>
-				<button class="pull-right btn btn-success" id="add-row">Add {{ ucfirst(str_replace('_', ' ', snake_case('{{lowerCrudModel}}'))) }}</button>
+				<button class="pull-right btn btn-success" id="add-table-row">Add {{ ucfirst(str_replace('_', ' ', snake_case('{{lowerCrudModel}}'))) }}</button>
 			</div>
 			
 			<table id="{{lowerCrudModel}}" class="table no-border table-hover">
 		        <thead class="no-border">
 			        <tr>
-				        @foreach ($headers = ['Name', 'Status'] as $header)
-				        <th>{{$header}}</th>
-				        @endforeach
+				        <th>Name</th>
+				        <th>Status</th>
 				        <th style="text-align:center;">Actions</th>
 			        </tr>
 		        </thead>
 		        <tbody class="no-border-y">
-		       		@include('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.rows', ['{{lowerCrudModel}}s' => {{lowerCrudModel}}s])
+		       		@include('{{lowerControllerPrefix}}.partials.{{lowerCrudModel}}s.crud.rows', ['{{lowerCrudModel}}s' => ${{lowerCrudModel}}s])
 		        </tbody>
 		        <tfoot class="no-border-y">
 			        <tr style="display: none">
-				        <td colspan="{{ count($header) }}">
+				        <td colspan="3">
 				        	{{--
 							  for inline edit: use .ads-add-new-row
 							  for modal edit: use .ads-add-new-modal
