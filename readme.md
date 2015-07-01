@@ -34,7 +34,7 @@ Publish the necessary files
 
 Run:
 ```
-php artisan vendor:publish --provider=\"Ads\\AjaxCrud\\AjaxCrudServiceProvider\"
+php artisan vendor:publish --provider="Ads\AjaxCrud\AjaxCrudServiceProvider"
 ```
 
 Step 3:
