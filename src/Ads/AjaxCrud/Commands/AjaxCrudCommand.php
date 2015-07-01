@@ -80,37 +80,37 @@ class AjaxCrudCommand extends Command {
 		$rows = \Storage::disk('local')->get('crudStubs/views/crud/rows.stub');
 		$rows = str_replace('{{crudModel}}', $crudModel, $rows);
 		$rows = str_replace('{{lowerCrudModel}}', $lowerCrudModel, $rows);
-		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/rows.stub', $rows);
+		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/rows.blade.php', $rows);
 		
 		// Edit Rows View
 		$editRows = \Storage::disk('local')->get('crudStubs/views/crud/edit_rows.stub');
 		$editRows = str_replace('{{crudModel}}', $crudModel, $editRows);
 		$editRows = str_replace('{{lowerCrudModel}}', $lowerCrudModel, $editRows);
-		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/edit_rows.stub', $editRows);
+		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/edit_rows.blade.php', $editRows);
 		
 		// New Row View
 		$newRow = \Storage::disk('local')->get('crudStubs/views/crud/new_row.stub');
 		$newRow = str_replace('{{crudModel}}', $crudModel, $newRow);
 		$newRow = str_replace('{{lowerCrudModel}}', $lowerCrudModel, $newRow);
-		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/new_row.stub', $newRow);
+		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/new_row.blade.php', $newRow);
 		
 		// Modal View
 		$modalView = \Storage::disk('local')->get('crudStubs/views/crud/modal.stub');
 		$modalView = str_replace('{{crudModel}}', $crudModel, $modalView);
 		$modalView = str_replace('{{lowerCrudModel}}', $lowerCrudModel, $modalView);
-		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/new_modal.stub', $modalView);
+		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/new_modal.blade.php', $modalView);
 		
 		// Modal Edit View
 		$modalEditView = \Storage::disk('local')->get('crudStubs/views/crud/modalEdit.stub');
 		$modalEditView = str_replace('{{crudModel}}', $crudModel, $modalView);
 		$modalEditView = str_replace('{{lowerCrudModel}}', $lowerCrudModel, $modalView);
-		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/edit_modal.stub', $modalEditView);
+		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/crud/edit_modal.blade.php', $modalEditView);
 		
 		// Modify
 		$modify = \Storage::disk('local')->get('crudStubs/views/modify.stub');
 		$modify = str_replace('{{lowerControllerPrefix}}', $lowerControllerPrefix, $modify);
 		$modify = str_replace('{{lowerCrudModel}}', $lowerCrudModel, $modify);
-		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/modify.stub', $modify);
+		\Storage::disk('local')->put('crudPartial/'.$lowerControllerPrefix . $crudModel . '/views/modify.blade.php', $modify);
 		
 		// JS Footer
 		$jsFooter = \Storage::disk('local')->get('crudStubs/js/scripts.stub');
