@@ -23,13 +23,6 @@ Also add a publish command so that the files stay up to date:
 			...
 ```
 
-add the service provider to config/app.php:
-```
-...
-'Ads\AjaxCrud\AjaxCrudServiceProvider',
-...
-```
-
 run
 ```
 composer update
@@ -37,6 +30,13 @@ composer update
 
 Step 2:
 Publish the necessary files
+
+Add the service provider to config/app.php:
+```
+...
+'Ads\AjaxCrud\AjaxCrudServiceProvider',
+...
+```
 
 Run:
 ```
