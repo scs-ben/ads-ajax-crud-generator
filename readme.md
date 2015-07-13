@@ -26,7 +26,7 @@ Also add a publish command so that the files stay up to date:
 
 run
 ```
-php composer update
+composer update
 ```
 
 Step 2:
